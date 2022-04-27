@@ -1,0 +1,53 @@
+﻿<Window x:Class="QR_Creator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QR_Creator"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="QR Creator" Height="600" Width="800" Icon="/qr-code.png">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <TextBlock x:Name="Organization" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Организация: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+            <TextBox x:Name="TB_Organization" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" Cursor="IBeam"/>
+
+            <TextBlock x:Name="InventNumber" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Инвентарный номер: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+            <TextBox x:Name="TB_InventNumber" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
+
+            <TextBlock x:Name="Specification" HorizontalAlignment="Left" Margin="100,10,0,0" Text="===== Спецификация =====" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="180"/>
+            
+            <TextBlock x:Name="SustemBlok" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Системный блок: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+            <TextBox x:Name="TB_SustemBlok" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="300" />
+            <TextBlock x:Name="Monitor" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Монитор: " TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="140"/>
+            <TextBox x:Name="TB_Monitor" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" />
+            <TextBlock x:Name="Mb_Kb" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Клавиатура, мышь: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+            <TextBox x:Name="TB_Mb_Kb" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" />
+            
+            <TextBlock x:Name="Person" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Отвественное лицо: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+            <TextBox x:Name="TB_Person" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
+            
+            <TextBlock x:Name="Date_exp" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Дата ввода в экплуатацию: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="240"/>
+            <DatePicker x:Name="DP_Data_Exp" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top" Height="25" Width="100"/>
+
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="BTN_Create_QR_Code" Content="QR на экран" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Cursor="Hand" Click="BTN_Create_QR_Code_Click"/>
+                <Button x:Name="BTN_Add_object" Content="Сохранить" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Add_object_Click"/>
+                <Button x:Name="BTN_Print_All" Content="Печать" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Print_All_Click"/>
+            </StackPanel>
+        </StackPanel >
+        
+        <Canvas x:Name="For_Print" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" >
+            <Image x:Name="Im_QR_Code" Grid.Column="1" HorizontalAlignment="Stretch" Margin="30,100,10,10" VerticalAlignment="Stretch" Height="300"  Width="300"/>
+        </Canvas>
+
+        
+
+    </Grid>
+</Window>
