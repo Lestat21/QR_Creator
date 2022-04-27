@@ -114,4 +114,3 @@ namespace QR_Creator
         }
     }
 }
-
