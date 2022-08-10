@@ -57,6 +57,8 @@ namespace QR_Creator
 
         public BitmapImage CreateCode(string text, int width, int heith)
         {
+
+
             BarcodeWriter writer = new BarcodeWriter
             {
                 Format = BarcodeFormat.QR_CODE,
@@ -111,6 +113,110 @@ namespace QR_Creator
                     bitmap.Save(string.Concat(saveFile.FileName, ".png"), ImageFormat.Png);
                 }
             }
+        }
+
+        private void BTN_Create_QR_Code_Print_Click(object sender, RoutedEventArgs e)
+        {
+            Printer printer = new Printer();
+
+            printer.Organization = TB_Organization_Print.Text;
+            printer.InventNumber = TB_InventNumber_Print.Text;
+            printer.ModelPrinter = TB_Model_Print.Text;
+            printer.Person = TB_Person_Print.Text;
+            printer.Date_Exp = DP_Data_Exp.SelectedDate.Value;
+
+            string resultString = Organization.Text + printer.Organization + "\n" +
+                                   InventNumber.Text + printer.InventNumber + "\n" +
+                                   "Спецификация:\n" +
+                                   printer.ModelPrinter + "\n" +
+                                   Person.Text + printer.Person + "\n" +
+                                   Date_exp.Text + printer.Date_Exp;
+
+            Im_QR_Code.Source = CreateCode(resultString, 1000, 1000);
+        }
+
+        private void BTN_Add_object_Print_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "PNG|*.png";
+            saveFile.FileName = "QRcode_" + TB_InventNumber_Print.Text;
+            if (saveFile.ShowDialog() == true)
+            {
+                if (bitmap != null)
+                {
+                    bitmap.Save(string.Concat(saveFile.FileName, ".png"), ImageFormat.Png);
+                }
+            }
+
+        }
+
+        private void BTN_Create_QR_Code_Catridg_Click(object sender, RoutedEventArgs e)
+        {
+            Catridg catridg = new Catridg();
+
+            catridg.Organization = TB_Organization_Catridg.Text;
+            catridg.InventNumber = TB_InventNumber_Catridg.Text;
+            catridg.ModelCatridj = TB_Model_Catridg.Text;
+            catridg.Person = TB_Person_Catridg.Text;
+            catridg.Date_Exp = DP_Data_Exp_Catridg.SelectedDate.Value;
+
+            string resultString = Organization.Text + catridg.Organization + "\n" +
+                                   InventNumber.Text + catridg.InventNumber + "\n" +
+                                   "Спецификация:\n" +
+                                   catridg.ModelCatridj + "\n" +
+                                   Person.Text + catridg.Person + "\n" +
+                                   Date_exp.Text + catridg.Date_Exp;
+
+            Im_QR_Code.Source = CreateCode(resultString, 500, 500);
+        }
+
+        private void BTN_Add_object_Catridg_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "PNG|*.png";
+            saveFile.FileName = "QRcode_" + TB_InventNumber_Catridg.Text;
+            if (saveFile.ShowDialog() == true)
+            {
+                if (bitmap != null)
+                {
+                    bitmap.Save(string.Concat(saveFile.FileName, ".png"), ImageFormat.Png);
+                }
+            }
+
+        }
+
+        private void BTN_Create_QR_Code_Other_Click(object sender, RoutedEventArgs e)
+        {
+            Other other = new Other();
+            other.Organization = TB_Organization_Other.Text;
+            other.InventNumber = TB_InventNumber_Other.Text;
+            other.Description = TB_Model_Other.Text;
+            other.Person = TB_Person_Other.Text;
+            other.Date_Exp = DP_Data_Exp_Other.SelectedDate.Value;
+
+            string resultString = Organization.Text + other.Organization + "\n" +
+                                   InventNumber.Text + other.InventNumber + "\n" +
+                                   "Спецификация:\n" +
+                                   other.Description + "\n" +
+                                   Person.Text + other.Person + "\n" +
+                                   Date_exp.Text + other.Date_Exp;
+
+            Im_QR_Code.Source = CreateCode(resultString, 1000, 1000);
+        }
+
+        private void BTN_Add_object_Other_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "PNG|*.png";
+            saveFile.FileName = "QRcode_" + TB_InventNumber_Other.Text;
+            if (saveFile.ShowDialog() == true)
+            {
+                if (bitmap != null)
+                {
+                    bitmap.Save(string.Concat(saveFile.FileName, ".png"), ImageFormat.Png);
+                }
+            }
+
         }
     }
 }

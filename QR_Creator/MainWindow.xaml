@@ -9,45 +9,145 @@
         Title="QR Creator" Height="600" Width="800" Icon="/qr-code.png">
     
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
-            <TextBlock x:Name="Organization" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Организация: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
-            <TextBox x:Name="TB_Organization" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" Cursor="IBeam"/>
+        <TabControl Grid.Column="0">
+            <TabItem> <!--Компьютеры-->
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3">Компьютеры</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <TextBlock x:Name="Organization" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Организация: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Organization" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" Cursor="IBeam"/>
+                        <TextBlock x:Name="InventNumber" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Инвентарный номер: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_InventNumber" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
+                        <TextBlock x:Name="Specification" HorizontalAlignment="Left" Margin="100,10,0,0" Text="===== Спецификация =====" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="180"/>
+                        <TextBlock x:Name="SustemBlok" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Системный блок: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_SustemBlok" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="300" />
+                        <TextBlock x:Name="Monitor" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Монитор: " TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="140"/>
+                        <TextBox x:Name="TB_Monitor" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" />
+                        <TextBlock x:Name="Mb_Kb" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Клавиатура, мышь: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Mb_Kb" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" />
+                        <TextBlock x:Name="Person" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Отвественное лицо: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Person" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
 
-            <TextBlock x:Name="InventNumber" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Инвентарный номер: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
-            <TextBox x:Name="TB_InventNumber" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
+                        <TextBlock x:Name="Date_exp" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Дата ввода в экплуатацию: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="240"/>
+                        <DatePicker x:Name="DP_Data_Exp" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top" Height="25" Width="100"/>
 
-            <TextBlock x:Name="Specification" HorizontalAlignment="Left" Margin="100,10,0,0" Text="===== Спецификация =====" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="180"/>
-            
-            <TextBlock x:Name="SustemBlok" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Системный блок: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
-            <TextBox x:Name="TB_SustemBlok" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="300" />
-            <TextBlock x:Name="Monitor" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Монитор: " TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="140"/>
-            <TextBox x:Name="TB_Monitor" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" />
-            <TextBlock x:Name="Mb_Kb" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Клавиатура, мышь: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
-            <TextBox x:Name="TB_Mb_Kb" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" />
-            
-            <TextBlock x:Name="Person" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Отвественное лицо: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
-            <TextBox x:Name="TB_Person" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
-            
-            <TextBlock x:Name="Date_exp" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Дата ввода в экплуатацию: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="240"/>
-            <DatePicker x:Name="DP_Data_Exp" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top" Height="25" Width="100"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="BTN_Create_QR_Code" Content="QR на экран" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Cursor="Hand" Click="BTN_Create_QR_Code_Click"/>
+                            <Button x:Name="BTN_Add_object" Content="Сохранить" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Add_object_Click"/>
+                            <!--<Button x:Name="BTN_Print_All" Content="Печать" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Print_All_Click"/>-->
+                        </StackPanel>
+                    </StackPanel >
+                </TabItem.Content>
+            </TabItem> 
+            <TabItem> <!--Принтеры-->
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3">Принтеры</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
 
-            <StackPanel Orientation="Horizontal">
-                <Button x:Name="BTN_Create_QR_Code" Content="QR на экран" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Cursor="Hand" Click="BTN_Create_QR_Code_Click"/>
-                <Button x:Name="BTN_Add_object" Content="Сохранить" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Add_object_Click"/>
-                <Button x:Name="BTN_Print_All" Content="Печать" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Print_All_Click"/>
-            </StackPanel>
-        </StackPanel >
-        
+                <TabItem.Content>
+                    <StackPanel>
+                        <TextBlock x:Name="Organization_Print" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Организация: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Organization_Print" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" Cursor="IBeam"/>
+                        <TextBlock x:Name="InventNumber_Print" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Инвентарный номер: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_InventNumber_Print" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
+                        <TextBlock x:Name="Specification_Print" HorizontalAlignment="Left" Margin="100,10,0,0" Text="===== Спецификация =====" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="180"/>
+                        <TextBlock x:Name="Model_Print" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Модель принтера" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Model_Print" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" />
+                        <TextBlock x:Name="Person_Print" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Отвественное лицо: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Person_Print" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
+
+                        <TextBlock x:Name="Date_exp_Print" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Дата ввода в экплуатацию: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="240"/>
+                        <DatePicker x:Name="DP_Data_Exp_Print" HorizontalAlignment="Left" Margin="20,5,0,150" VerticalAlignment="Top" Height="25" Width="100"/>
+                        
+                        <StackPanel Orientation="Horizontal" >
+                            <Button x:Name="BTN_Create_QR_Code_Print" Content="QR на экран" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Cursor="Hand" Click="BTN_Create_QR_Code_Print_Click"/>
+                            <Button x:Name="BTN_Add_object_Print" Content="Сохранить" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Add_object_Print_Click"/>
+                            <!--<Button x:Name="BTN_Print_All_Print" Content="Печать" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Print_All_Print_Click"/>-->
+                        </StackPanel>
+
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem> <!--Картриджи-->
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3">Картриджи</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <TextBlock x:Name="Organization_Catridg" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Организация: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Organization_Catridg" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" Cursor="IBeam"/>
+                        <TextBlock x:Name="InventNumber_Catridg" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Инвентарный номер: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_InventNumber_Catridg" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
+                        <TextBlock x:Name="Specification_Catridg" HorizontalAlignment="Left" Margin="100,10,0,0" Text="===== Спецификация =====" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="180"/>
+                        <TextBlock x:Name="Model_Catridg" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Модель картриджа" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Model_Catridg" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" />
+                        
+                        <TextBlock x:Name="Person_Catridg" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Отвественное лицо: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Person_Catridg" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
+                        
+                        <TextBlock x:Name="Date_exp_Catridg" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Дата ввода в экплуатацию: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="240"/>
+                        <DatePicker x:Name="DP_Data_Exp_Catridg" HorizontalAlignment="Left" Margin="20,5,0,150" VerticalAlignment="Top" Height="25" Width="100"/>
+
+                        <StackPanel Orientation="Horizontal" >
+                            <Button x:Name="BTN_Create_QR_Code_Catridg" Content="QR на экран" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Cursor="Hand" Click="BTN_Create_QR_Code_Catridg_Click"/>
+                            <Button x:Name="BTN_Add_object_Catridg" Content="Сохранить" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Add_object_Catridg_Click"/>
+                            <!--<Button x:Name="BTN_Print_All_Catridg" Content="Печать" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Print_All_Catridg_Click"/>-->
+                        </StackPanel>
+
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem> <!--Иное-->
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3">Иное</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <TextBlock x:Name="Organization_Other" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Организация: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Organization_Other" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" Cursor="IBeam"/>
+                        <TextBlock x:Name="InventNumber_Other" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Инвентарный номер: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_InventNumber_Other" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
+                        <TextBlock x:Name="Specification_Other" HorizontalAlignment="Left" Margin="100,10,0,0" Text="===== Спецификация =====" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="180"/>
+                        <TextBlock x:Name="Model_Other" HorizontalAlignment="Left" Margin="20,5,0,0" Text="Описание устройства" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Model_Other" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300" />
+
+                        <TextBlock x:Name="Person_Other" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Отвественное лицо: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="140"/>
+                        <TextBox x:Name="TB_Person_Other" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="300"/>
+
+                        <TextBlock x:Name="Date_exp_Other" HorizontalAlignment="Left" Margin="20,10,0,0" Text="Дата ввода в экплуатацию: " TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="240"/>
+                        <DatePicker x:Name="DP_Data_Exp_Other" HorizontalAlignment="Left" Margin="20,5,0,150" VerticalAlignment="Top" Height="25" Width="100"/>
+
+                        <StackPanel Orientation="Horizontal" >
+                            <Button x:Name="BTN_Create_QR_Code_Other" Content="QR на экран" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Cursor="Hand" Click="BTN_Create_QR_Code_Other_Click"/>
+                            <Button x:Name="BTN_Add_object_Other" Content="Сохранить" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Add_object_Other_Click"/>
+                            <!--<Button x:Name="BTN_Print_All_Catridg" Content="Печать" Margin="10,20,0,0" VerticalAlignment="Top" Height="30" Width="120" HorizontalAlignment="Left" Click="BTN_Print_All_Other_Click"/>-->
+                        </StackPanel>
+
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+
         <Canvas x:Name="For_Print" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" >
             <Image x:Name="Im_QR_Code" Grid.Column="1" HorizontalAlignment="Stretch" Margin="30,100,10,10" VerticalAlignment="Stretch" Height="300"  Width="300"/>
         </Canvas>
-
         
-
     </Grid>
+    
 </Window>
